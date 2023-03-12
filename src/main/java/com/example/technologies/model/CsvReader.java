@@ -6,23 +6,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CsvReader {
-    BufferedReader reader = null;
-    String line ="";
+
+    private static CsvReader instance = null;
+    private BufferedReader reader = null;
+    private String line = "";
     private ArrayList<Punch> punches = new ArrayList<>();
 
     private String file = "src/main/resources/csv/wykrojniki.csv";
 
-    public CsvReader(){
+    private CsvReader() {
 
         try {
             reader = new BufferedReader(new FileReader(file));
-            while((line = reader.readLine())!=null){
-                String [] row = line.split(";");
-                punches.add(new Punch(Double.valueOf(row[0]),Double.valueOf(row[1]),Double.valueOf(row[2])));
+            while ((line = reader.readLine()) != null) {
+                String[] row = line.split(";");
+                punches.add(new Punch(Double.valueOf(row[0]), Double.valueOf(row[1]), Double.valueOf(row[2])));
             }
         } catch (Exception exception) {
             exception.printStackTrace();
-        }finally {
+        } finally {
             try {
                 reader.close();
             } catch (IOException e) {
@@ -31,7 +33,14 @@ public class CsvReader {
         }
     }
 
-    public ArrayList<Punch> getPunches() {
+    public static CsvReader getInstance() {
+        if (instance == null) {
+            instance = new CsvReader();
+        }
+        return instance;
+    }
+
+    public ArrayList<Punch> getPunches () {
         return punches;
     }
 }
