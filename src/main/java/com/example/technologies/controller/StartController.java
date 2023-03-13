@@ -10,10 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -107,23 +104,36 @@ public class StartController implements Initializable {
         table.getColumns().addAll(firstTableColumn,range_of_tolerance,feed,quantityInTheMatrix,
                 quantityInTheMatrix_sx, kszt_h,mb_kszt_epe,mb_kszt_sx);
 
-
-
-        table.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
-                punches = (Punch)table.getSelectionModel().getSelectedItem();
-                System.out.println(punches.getDiameter());
-            }
-        });
-
         anchorPane.getChildren().add(table);
         AnchorPane.setTopAnchor(table, 10.0);
         AnchorPane.setLeftAnchor(table, 10.0);
         AnchorPane.setRightAnchor(table, 10.0);
-        AnchorPane.setBottomAnchor(table, 10.0);
+        AnchorPane.setBottomAnchor(table, 100.0);
+        TextField field = new TextField();
+        TextField field1 = new TextField();
+        TextField field2 = new TextField();
+        Label label = new Label("Średnica");
+        Label label1 = new Label("Wydajność EPE:");
+        Label label2 = new Label("Wydajność Laminowana:");
+        HBox hBox = new HBox(label,field,label1,field1,label2,field2);
+        hBox.setPadding(new Insets(40,40,40,40));
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+
+        anchorPane.getChildren().add(hBox);
+        AnchorPane.setBottomAnchor(hBox, 1.0);
 
         BorderPane.setAlignment(anchorPane, Pos.CENTER_LEFT);
         borderPane.setCenter(anchorPane);
+
+        table.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                punches = (Punch)table.getSelectionModel().getSelectedItem();
+                field.setText(String.valueOf(punches.getDiameter()));
+                field1.setText(String.valueOf(punches.getKszt_h_epe()));
+                field2.setText(String.valueOf(punches.getKszt_h_sx()));
+            }
+        });
 
     }
 }
