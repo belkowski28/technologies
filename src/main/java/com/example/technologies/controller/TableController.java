@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,6 +16,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TableController implements Initializable {
+
+
+    @FXML
+    private Label srednica;
+
+    @FXML
+    private Label srednica_min;
 
     @FXML
     private TableView<Punch> newTable;
@@ -121,7 +129,8 @@ public class TableController implements Initializable {
         newTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 punches = (Punch)newTable.getSelectionModel().getSelectedItem();
-                System.out.println(punches.getDiameter());
+                srednica.setText(Double.toString(punches.getDiameter()));
+                srednica_min.setText(Double.toString(punches.getDiameter_min()));
             }
         });
 

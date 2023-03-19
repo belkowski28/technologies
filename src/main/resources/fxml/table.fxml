@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<ScrollPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.technologies.controller.TableController">
+<ScrollPane prefHeight="715.0" prefWidth="1122.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.technologies.controller.TableController">
    <content>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1532.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1120.0">
          <children>
-            <TableView fx:id="newTable" prefHeight="739.0" prefWidth="1246.0">
+            <TableView fx:id="newTable" prefHeight="300.0" prefWidth="800.0">
               <columns>
                 <TableColumn fx:id="table1" prefWidth="75.0" text="C1" />
                 <TableColumn fx:id="table2" prefWidth="75.0" text="C2">
@@ -38,7 +42,30 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Pane fx:id="pane" prefHeight="739.0" prefWidth="523.0" style="-fx-background-color: green;" />
+            <VBox prefHeight="661.0" prefWidth="299.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="345.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../claw-machine.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="30.0" prefWidth="200.0" spacing="50.0">
+                     <children>
+                        <Label text="Średnica" />
+                        <Label fx:id="srednica" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="Średnica min." />
+                        <Label fx:id="srednica_min" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+            </VBox>
          </children>
       </HBox>
    </content>
