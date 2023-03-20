@@ -44,9 +44,9 @@
             </TableView>
             <VBox prefHeight="661.0" prefWidth="299.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="345.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="175.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../claw-machine.png" />
+                        <Image url="@../img/punch.jpg" />
                      </image>
                   </ImageView>
                   <HBox prefHeight="30.0" prefWidth="200.0" spacing="50.0">
