@@ -19,10 +19,31 @@ public class TableController implements Initializable {
 
 
     @FXML
+    private Label label4;
+
+    @FXML
+    private Label label5;
+
+    @FXML
+    private Label label6;
+
+    @FXML
+    private Label label7;
+
+    @FXML
+    private Label label8;
+
+    @FXML
     private Label srednica;
 
     @FXML
+    private Label srednica_max;
+
+    @FXML
     private Label srednica_min;
+
+    @FXML
+    private Label label9;
 
     @FXML
     private TableView<Punch> newTable;
@@ -79,6 +100,7 @@ public class TableController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         tableCreate();
     }
 
@@ -131,6 +153,14 @@ public class TableController implements Initializable {
                 punches = (Punch)newTable.getSelectionModel().getSelectedItem();
                 srednica.setText(Double.toString(punches.getDiameter()));
                 srednica_min.setText(Double.toString(punches.getDiameter_min()));
+                srednica_max.setText(Double.toString(punches.getDiameter_max()));
+                label4.setText(Double.toString(punches.getFeed()));
+                label5.setText(Double.toString(punches.getQuantity_in_the_matrix()));
+                label6.setText(Double.toString(punches.getQuantity_in_the_matrix_sx()));
+                label7.setText(Double.toString(punches.getKszt_h_epe()));
+                label8.setText(Double.toString(punches.getMb_kszt_epe()));
+                label9.setText(Double.toString(punches.getMb_kszt_sx()));
+
             }
         });
 

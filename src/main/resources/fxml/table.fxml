@@ -44,9 +44,9 @@
             </TableView>
             <VBox prefHeight="661.0" prefWidth="299.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="345.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="175.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../claw-machine.png" />
+                        <Image url="@../img/punch.jpg" />
                      </image>
                   </ImageView>
                   <HBox prefHeight="30.0" prefWidth="200.0" spacing="50.0">
@@ -59,6 +59,48 @@
                      <children>
                         <Label text="Średnica min." />
                         <Label fx:id="srednica_min" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="274.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="Średnica max" />
+                        <Label fx:id="srednica_max" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="314.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="długość posuwu [mm]" />
+                        <Label fx:id="label4" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="354.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="skok EPE" />
+                        <Label fx:id="label5" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="394.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="skok laminowany" />
+                        <Label fx:id="label6" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="434.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="ilość kszt./h (300)" />
+                        <Label fx:id="label7" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="474.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="1mb/kszt. EPE" />
+                        <Label fx:id="label8" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="514.0" prefHeight="30.0" prefWidth="207.0" spacing="20.0">
+                     <children>
+                        <Label text="1mb/kszt. laminowana" />
+                        <Label fx:id="label9" text="Label" />
                      </children>
                   </HBox>
                </children>
